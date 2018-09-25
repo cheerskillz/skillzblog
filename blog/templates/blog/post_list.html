@@ -7,16 +7,13 @@
             <h1><a href="/">Cheerski Blog</a></h1>
         </div>
 
-        <div>
-            <h2><a href="">Мой первый пост</a></h2>
-            <p>published: 24.09.2018, 10:26</p>
-            <p>Как только напишу, сразу выложу, но он обещает быть интересным.</p>
-        </div>
-
-        <div>
-            <h2><a href="">Второй пост</a></h2>
-            <p>published: 24.09.2018, 10:34</p>
-            <p>Не менее интересный пост.</p>
+    {% for post in posts %}
+          <div>
+              <p>published: {{ post.published_date }}</p>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+        {% endfor %}
         </div>
     </body>
 </html>
